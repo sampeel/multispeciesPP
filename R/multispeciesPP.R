@@ -222,7 +222,7 @@ function(sdm.formula, bias.formula, PA, PO, BG,
         for(k in 1:n.species) {
             if((species[k] %in% species.PA) &&
                sum(!is.na(PA[PA.good.rows,species[k]])>0))
-                start.alpha[k] <- log((1+sum(PA[PA.good.rows,species[k]],na.rm=TRUE))/n.PA/quadrat.size)
+                start.alpha[k] <- log((1+sum(PA[PA.good.rows,species[k]],na.rm=TRUE))/n.PA/mean(quadrat.size))
             if(species[k] %in% species.PO)  start.gamma[k] <- log1p(sdm.margins.gamma[k,]) - start.alpha[k]- log(region.size)
 
         }
