@@ -1,3 +1,21 @@
+##' Predict species intensities or biased species intensities based on
+##' a multispeciesPP model.
+##'
+##' @title Predict species intensities or biased species intensities
+##'   based on a multispeciesPP model.
+##' @param object a fitted object of class \code{multispeciesPP}
+##' @param newdata optionally, a data frame in which to look for
+##'   variables with which to predict. If omitted, the fitted linear
+##'   predictors are used.
+##' @param sdm ??
+##' @param bias ??
+##' @param species vector of species names.
+##' @param dispersion ignored.
+##' @param terms ignored.
+##' @param na.action ignored.
+##' @param ... ignored.
+##' @author William Fithian
+##' @importFrom stats model.matrix na.pass
 predict.multispeciesPP <-
 function (object, newdata,
               sdm=TRUE, bias=FALSE,

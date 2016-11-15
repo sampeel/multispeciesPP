@@ -1,3 +1,27 @@
+##'   This function fits a GLM where each row has a different family
+##'   and the block structure is like that described in the
+##'   Proportional Observer Bias paper.
+##'
+##' @title Function to fit a generalized linear model with a
+##'   particular block structure for the design matrix.
+##' @param x The X matrix lying on the diagonal blocks of the design.
+##' @param z The Z matrix lying on the blocks in the right column of
+##'   the design.
+##' @param y Responses
+##' @param weights Case weights
+##' @param start Starting coefficients, which must be given
+##' @param etastart Starting linear predictors (not implemented)
+##' @param mustart Starting fits for the mean of y
+##' @param offset Offsets for the generalized linear model
+##' @param families List of all the families that occur for any
+##'   observation.
+##' @param row.families List of integers whose length is
+##'   \code{length(y)} between 1 and \code{length(families)}.  If
+##'   \code{row.families[i]} is 3, then row \code{i} uses the third
+##'   family in the list of families.
+##' @param control  Similar to \code{control} for \code{glm.fit}
+##' @author William Fithian
+##' @importFrom stats gaussian
 block.glm.fit <-
 function(x, z, y, weights = rep(1, nobs), start = NULL, etastart = NULL,
                           mustart = NULL, offset = rep(0, nobs), families=list(gaussian()),

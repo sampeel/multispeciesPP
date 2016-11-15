@@ -1,3 +1,13 @@
+##' Construct summary table for multispeciesPP model
+##'
+##' @title Construct summary table for multispeciesPP model
+##' @param object a fitted multispeciesPP object
+##' @param standardized should the standardized or the raw
+##'   coefficients be reported.
+##' @param ... ignored.
+##' @author William Fithian
+##' @importFrom stats pnorm
+##' @export
 summary.multispeciesPP <-
 function(object,standardized=TRUE,...) {
     if(standardized) {

@@ -1,3 +1,9 @@
+##' Allows us to encode a GLM with an extra linear term as a GLM.
+##'
+##' @title Linear "family" for rows.
+##' @param tol Numerical tolerance.  Should be small.
+##' @author William Fithian
+##' @export
 linear <-
 function(tol=1e-10) {
     structure(list(family = "linear", linkfun = function(mu) mu / tol,

@@ -1,3 +1,16 @@
+##' The function is called by \code{block.glm.fit} at each iteration
+##' to do a computationally efficient step of iterative reweighted
+##' least squares.
+##'
+##' @title Weighted least-squares solve with a certain block structure
+##' @param x The X matrix lying on the diagonal blocks of the design.
+##' @param z The Z matrix lying on the blocks in the right column of the design.
+##' @param w Vector of weights.
+##' @param y Vector to be projected.
+##' @param inverse.hessian Should be FALSE.
+##' @param wt.tol Used in internal computations.  Should be small.
+##' @author William Fithian
+## @importFrom stats
 block.projection <-
 function(x,z,w,y,inverse.hessian=FALSE,wt.tol=1E-30) {
     n.blocks <- length(w)/nrow(x)
