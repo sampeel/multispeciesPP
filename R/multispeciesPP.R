@@ -302,7 +302,7 @@ function(sdm.formula, bias.formula, PA, PO, BG,
                bias.coef=unstandardized.bias.coef,
                linear.fit.PA=linear.fit.PA,fit.PA=fit.PA,
                linear.bias.fit.BG=linear.bias.fit.BG,bias.fit.BG=bias.fit.BG,
-               linear.fit.BG=linear.fit.BG,fit.BG=fit.BG)
+               linear.fit.BG=linear.fit.BG,fit.BG=fit.BG,converged=fit$converged)
 
     ##if(inverse.hessian) {
     ##    inv.hess <- block.projection(x,z,w,u,inverse.hessian=TRUE)$inverse.hessian
