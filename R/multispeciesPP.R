@@ -86,6 +86,8 @@ function(sdm.formula, bias.formula, PA, PO, BG,
     control <- do.call("glm.control", control)
     species <- union(species.PO,species.PA)
 
+    sdm.formula <- as.formula(sdm.formula)    # Convert to formula (e.g. when it is a character string!).
+    bias.formula <- as.formula(bias.formula)  
     sdm.formula <- update(sdm.formula,~.+1)   # ensure intercept for sdm model
     bias.formula <- update(bias.formula,~.-1) # get rid of intercept for bias model
 
